@@ -15,6 +15,17 @@ public class MyBatisTest {
 	public DataConnection dataConn=new DataConnection();
 	
 	@Test
+	public void selectAllUser() throws IOException {
+		
+		SqlSession sqlSession=dataConn.getSqlSession();
+		List<User> list=sqlSession.getMapper(UserMapper.class).selectAllUser();
+		for(User user:list) {
+			System.out.println(user.toString());
+		}
+		sqlSession.close();
+	}
+	
+	@Test
 //		查询一条记录，通过id查找姓名
 	public void SelectById() throws IOException {
 		
@@ -44,11 +55,11 @@ public class MyBatisTest {
 	
 	@Test
 	//增加一条记录
-	public void add() throws IOException{
+	public void testInsert() throws IOException{
 		SqlSession sqlSession=dataConn.getSqlSession();
 			
 		User users=new User();
-		users.setId(13);
+		users.setId(14);
 		users.setUserName("老王");
 		users.setGender(0);
 		users.setUserPassword("1258");
@@ -62,52 +73,56 @@ public class MyBatisTest {
 //	      System.out.println(users);
 
 //		使用接口：
-		 int mapper = sqlSession.getMapper(UserMapper.class).add(users);
+		 sqlSession.getMapper(UserMapper.class).insertUser(users);
 	
 //		如果是增删改，必须提交事务，持久化到数据库：
 		sqlSession.commit();
 //		关闭连接：
 		sqlSession.close();
 		
-		System.out.println("增加"+mapper+"条记录");
+		System.out.println("增加记录成功");
 	}
 	
 	@Test
 	//删除一条记录
-	public void delete() throws IOException{
+	public void testDeleteUser() throws IOException{
 		SqlSession sqlSession=dataConn.getSqlSession();
 		
 //		不使用接口		
 //		sqlSession.delete("user.delete","13");
 
 //		使用接口
-		 int mapper = sqlSession.getMapper(UserMapper.class).delete(13);
+//		 int mapper = sqlSession.getMapper(UserMapper.class).delete(13);
+		sqlSession.getMapper(UserMapper.class).deleteUser(13);
 		
 		sqlSession.commit();
 		sqlSession.close();
 		
-		System.out.println("删除"+mapper+"条记录");
+		System.out.println("删除记录成功");
 	}
 	
 	@Test
 	//修改一条记录
-	public void update() throws IOException{
+	public void testUpdate() throws IOException{
 		SqlSession sqlSession=dataConn.getSqlSession();
 		
-		User user=new User();
-		user.setId(5);
-		user.setUserName("王老9");
+		//当UserMapper.java中updateUser的接口是int类型时，即public int updateUser(User user)，可创建一个User对象，控制台显示更新数目
+	//	User user=new User();
+	//	user.setId(5);
+	//	user.setUserName("王老9");
 		
 //		不使用接口		
 //		sqlSession.insert("user.update",user);
 //		System.out.println(user);
 		
 //		使用接口
-		int mapper = sqlSession.getMapper(UserMapper.class).update(user);
+		sqlSession.getMapper(UserMapper.class).updateUser("李lllu",3);
+		//void类型不返回任何值，没有返回值，所以无法调用返回值显示修改后的信息
+		
 		sqlSession.commit();
 		sqlSession.close();
 		
-		System.out.println("修改"+mapper+"条记录");
+		System.out.println("修改成功");
 	}
 	
 }

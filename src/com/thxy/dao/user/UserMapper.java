@@ -11,9 +11,17 @@ public interface UserMapper {
 	//接口
 	
 	public User findUserById(@Param("id") Integer id);
-	public List<User> findByName(String name);
-	public int add(User user);
-	public int delete(Integer id);
-	public int update(User user);
+	
+	public List<User> selectAllUser();
+	
+//	public int insertUser(User user);
+	public void insertUser(User user);
+	
+//	public int delete(Integer id);
+	public void deleteUser(@Param("id") Integer id);
+	
+//	public int updateUser(User user);
+//  public void updateUser(@Param("userName")String userName);
+	public void updateUser(@Param("userName")String userName,@Param("id") int id);
 	
 }

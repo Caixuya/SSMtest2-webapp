@@ -11,16 +11,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		resultType="com.thxy.pojo.User">
 		select * from t_user WHERE id=#{id}
 	</select>
-	<insert id="add" parameterType="com.thxy.pojo.User">
+	<insert id="insertUser" parameterType="com.thxy.pojo.User">
 		insert into
 		t_user(id,userName,userPassword,gender)values(#{id},#{userName},#{userPassword},#{gender})
 	</insert>
-	<delete id="delete" parameterType="com.thxy.pojo.User">
+	<delete id="deleteUser" parameterType="com.thxy.pojo.User">
 		delete from
 		t_user where
 		id=#{id}
 	</delete>
-	<update id="update" parameterType="com.thxy.pojo.User">
+	<update id="updateUser">
 		update
 		t_user set
 		userName=#{userName}
@@ -31,5 +31,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findAll" parameterType="int"
 		resultType="com.thxy.pojo.User">
 		select count(id) from t_user
+	</select>
+	<select id="selectAllUser" resultType="com.thxy.pojo.User">
+		select * from t_user
 	</select>
 </mapper>
