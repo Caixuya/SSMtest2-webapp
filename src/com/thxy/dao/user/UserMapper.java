@@ -14,7 +14,7 @@ public interface UserMapper {
 	
 	public List<User> selectAllUser();
 	
-//	public int insertUser(User user);
+////	public int insertUser(User user);
 	public void insertUser(User user);
 	
 //	public int delete(Integer id);
