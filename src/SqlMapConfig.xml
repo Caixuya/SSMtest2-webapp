@@ -11,16 +11,16 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
 				<!-- jdbc后面的***中填入的是对应的数据库名称 -->
-				<property name="url" value="jdbc:***://localhost:3306/mybatis?characterEncoding=utf-8"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8"/>
 				<!-- username后面的***中填入的是数据库连接的用户名，password后面的***中填入的是数据库连接的密码 -->
-				<property name="username" value="***"/>
-				<property name="password" value="***"/>
+				<property name="username" value="tia"/>
+				<property name="password" value="980703"/>
 			</dataSource>
 		</environment>
 	</environments>
 	<!-- 引入映射配置文件 -->
 	<mappers>
 	<!--这里填写的是包名.类名，即UserMapper.xml所在的包的名字.UserMapper.xml  -->
-		<mapper resource="sqlmap/UserMapper.xml"/>
+		<mapper class="com.thxy.dao.user.UserMapper"/>
 	</mappers>
 </configuration>

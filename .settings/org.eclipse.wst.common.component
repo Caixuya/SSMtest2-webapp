@@ -2,7 +2,6 @@
     <wb-module deploy-name="SSMtest2-webapp">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/config"/>
         <property name="java-output-path" value="/SSMtest2-webapp/target/classes"/>
         <property name="context-root" value="SSMtest2-webapp"/>
     </wb-module>

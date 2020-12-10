@@ -1,4 +1,4 @@
-package sqlmap;
+package com.thxy.dao.user;
 
 import java.util.List;
 

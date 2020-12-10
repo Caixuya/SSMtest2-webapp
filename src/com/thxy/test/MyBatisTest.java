@@ -6,10 +6,9 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import com.thxy.dao.user.UserMapper;
 import com.thxy.datasource.DataConnection;
 import com.thxy.pojo.User;
-
-import sqlmap.UserMapper;
 
 public class MyBatisTest {
 	

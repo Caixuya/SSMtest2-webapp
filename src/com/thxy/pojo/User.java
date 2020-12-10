@@ -1,7 +1,5 @@
 package com.thxy.pojo;
 
-import java.math.BigInteger;
-
 import com.mysql.fabric.xmlrpc.base.Data;
 
 public class User {
