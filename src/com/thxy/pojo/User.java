@@ -1,6 +1,6 @@
 package com.thxy.pojo;
 
-import com.mysql.fabric.xmlrpc.base.Data;
+import java.util.Date;
 
 public class User {
 	
@@ -9,9 +9,9 @@ public class User {
 	private String userName;
 	private String userPassword;
 	private Integer gender;
-	private Data creationDate;
+	private Date creationDate;
 	private Integer modifyBy;
-	private Data modifyDate;
+	private Date modifyDate;
 	
 
 	public Integer getId() {
@@ -50,16 +50,16 @@ public class User {
 	public void setGender(Integer gender) {
 		this.gender = gender;
 	}
-	public Data getCreationDate() {
+	public Date getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(Data creationDate) {
+	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public Data getModifyDate() {
+	public Date getModifyDate() {
 		return modifyDate;
 	}
-	public void setModifyDate(Data modifyDate) {
+	public void setModifyDate(Date modifyDate) {
 		this.modifyDate = modifyDate;
 	}
 	@Override

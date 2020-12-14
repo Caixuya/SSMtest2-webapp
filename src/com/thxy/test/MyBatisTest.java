@@ -93,7 +93,7 @@ public class MyBatisTest {
 
 //		使用接口
 //		 int mapper = sqlSession.getMapper(UserMapper.class).delete(13);
-		sqlSession.getMapper(UserMapper.class).deleteUser(13);
+		sqlSession.getMapper(UserMapper.class).deleteUser(14);
 		
 		sqlSession.commit();
 		sqlSession.close();
